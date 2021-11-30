@@ -8,7 +8,7 @@ import { ArToolkitProfile, ArToolkitSource, ArToolkitContext, ArMarkerControls} 
 export default {
   name: "ARScene",
   mounted() {
-    ArToolkitContext.baseURL = '/'
+    ArToolkitContext.baseURL = './'
     console.log("ARScene mounted");
     // init renderer
     var renderer	= new THREE.WebGLRenderer({
@@ -21,7 +21,8 @@ export default {
     renderer.domElement.style.position = 'absolute'
     renderer.domElement.style.top = '0px'
     renderer.domElement.style.left = '0px'
-    document.body.appendChild( renderer.domElement ); // We should be able to specify an html element to append AR.js related elements to.
+    document.getElementById("ARScene").appendChild( renderer.domElement ); // We should be able to specify an html element to append AR.js related elements to.
+    // document.body.appendChild( renderer.domElement ); // We should be able to specify an html element to append AR.js related elements to.
     // array of functions for the rendering loop
     var onRenderFcts= [];
     // init scene and camera
