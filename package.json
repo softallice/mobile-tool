@@ -1,0 +1,52 @@
+{
+  "name": "mobile-web",
+  "version": "0.0.1",
+  "description": "ar map health",
+  "productName": "playground",
+  "author": "s991045 <s991045@gmail.com>",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.vue ./",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "@tensorflow-models/facemesh": "0.0.5",
+    "@tensorflow/tfjs": "3.11.0",
+    "@tensorflow/tfjs-converter": "3.11.0",
+    "axios": "^0.21.1",
+    "canvg": "^3.0.9",
+    "core-js": "^3.6.5",
+    "d3": "3.5.17",
+    "exifreader": "^4.1.0",
+    "form-data": "^4.0.0",
+    "localbase": "^0.7.5",
+    "point-in-polygon": "^1.1.0",
+    "quasar": "^2.0.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.13.14",
+    "@quasar/app": "^3.0.0",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-vue": "^7.0.0",
+    "eslint-webpack-plugin": "^2.4.0"
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ],
+  "engines": {
+    "node": ">= 12.22.1",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
