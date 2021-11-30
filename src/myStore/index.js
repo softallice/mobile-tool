@@ -6,19 +6,20 @@ const state = reactive({
       root: '/home',
       to: '/home',
       icon: 'las la-home',
-      label: 'Home'
+      label: '홈'
     },
     {
       root: '/questions',
       to: '/questions',
       icon: 'las la-question-circle',
-      label: 'Questions'
+      label: '질문'
     },
     {
       root: '/images',
-      to: '/images',
+      to: '/',
+      // to: '/images',
       icon: 'las la-image',
-      label: 'Images'
+      label: '이미지'
     }
   ],
   images: [

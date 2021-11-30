@@ -317,7 +317,7 @@ export default {
         })
 
         onActivated(()=> {
-            console.log('onActivated ');
+            // console.log('onActivated ');
             if ( !svg ) {
               // d3.select("svg").remove()
               let d = d3.selectAll('map-wrapper')
@@ -330,10 +330,10 @@ export default {
 
         onDeactivated( async () => {
 
-          console.log('DeActivated ');
+          // console.log('DeActivated ');
           
           // console.log('svg add', d3.select("svg"));
-          console.log('dddddd', d);
+          // console.log('dddddd', d);
         })
 
         const update = (() => {
@@ -346,7 +346,7 @@ export default {
 
             
             if ( svg ) {
-              console.log(svg);              
+              // console.log(svg);              
             }
 
 
@@ -356,7 +356,7 @@ export default {
                 .attr('width', size.width)
                 .attr('height', size.height);
 
-            console.log('svg', svg)
+            // console.log('svg', svg)
 
             svg.append('defs');
 
@@ -394,7 +394,7 @@ export default {
                 // Update color scale domain based on data
                 color.domain([0, d3.max(features, nameLength)]);
 
-                console.log('mapLayer', mapLayer);
+                // console.log('mapLayer', mapLayer);
 
                 // Draw each province as a path
                 mapLayer

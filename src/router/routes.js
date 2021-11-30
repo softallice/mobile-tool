@@ -12,7 +12,15 @@ const routes = [
           {
             path: '/home/imagemap',
             component: () => import('pages/Home/ImageMap.vue'),
-          }
+          },
+          { path: '/home/oxgen', 
+            name: 'Oxygensaturation' , 
+            component: () => import('pages/Health/Oxygensaturation.vue') 
+          },
+          { path: '/home/wharehouse', 
+            name: 'Wharehouse' , 
+            component: () => import('pages/Wharehouse/Wharehouse.vue') 
+          },
         ]
       },
       {
@@ -35,10 +43,7 @@ const routes = [
           }
         ]
       },
-      { path: '/oxgen', 
-        name: 'Oxygensaturation' , 
-        component: () => import('pages/Health/Oxygensaturation.vue') 
-      },
+      
     ]
   },
 

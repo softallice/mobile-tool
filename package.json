@@ -23,6 +23,7 @@
     "localbase": "^0.7.5",
     "point-in-polygon": "^1.1.0",
     "quasar": "^2.0.0",
+    "three": "0.134.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

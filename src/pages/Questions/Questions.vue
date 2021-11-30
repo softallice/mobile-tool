@@ -1,12 +1,12 @@
 <template>
   <page>
     <page-header>
-      <template #title>Questions</template>
+      <template #title>질문</template>
     </page-header>
     <page-body>
       <div class="q-pa-lg">
 
-        <div class="text-h5 q-mb-md">What is your Question?</div>
+        <div class="text-h5 q-mb-md">Q&A</div>
 
         <q-list bordered separator>
           <q-item
@@ -14,12 +14,12 @@
             clickable
             v-ripple
           >
-            <q-item-section>How do I do this?</q-item-section>
+            <q-item-section>여행 지도?</q-item-section>
             <q-item-section avatar>
               <q-icon color="primary" name="chevron_right" />
             </q-item-section>
           </q-item>
-          <q-item
+          <!-- <q-item
             to="/questions/answer"
             clickable
             v-ripple
@@ -28,7 +28,7 @@
             <q-item-section avatar>
               <q-icon color="primary" name="chevron_right" />
             </q-item-section>
-          </q-item>
+          </q-item> -->
         </q-list>
       </div>
     </page-body>

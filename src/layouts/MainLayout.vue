@@ -17,6 +17,7 @@
           :label="navItem.label"
           :icon="navItem.icon"
         />
+        
 
       </q-tabs>
     </q-footer>

@@ -1,23 +1,35 @@
 <template>
-    <div >
-        <div >
-            <video autoplay muted playsinline hidden ref="video" style=" width: auto; height: auto;"></video>
-        </div>
-        <div class="q-pa-md row justify-center">
-            <canvas ref="facecanvas"></canvas>
-        </div>          		
-        <div>
-            <h6> 산소포화도 : <span class="text-green"> {{ OxygenSaturation }} </span> </h6>
-            <h6> 심박수: <span class="text-blue"> {{ heartrate }} </span> BPM </h6>
-            <h6> 호흡수 : <span class="text-green"> {{ respiration }} </span> 회/분</h6>
-        </div>
-    </div>    
-    
+    <page>
+        <page-header>
+        <template #buttons-left>
+            <page-header-btn-back
+            label="Home"
+            />
+        </template>
+        <template #title>활력 징후 체크</template>
+        </page-header>
+        <page-body>
+            <div >
+                <div >
+                    <video autoplay muted playsinline hidden ref="video" style=" width: auto; height: auto;"></video>
+                </div>
+                <div class="q-pa-md row justify-center">
+                    <canvas ref="facecanvas"></canvas>
+                </div>          		
+                <div>
+                    <h6> 산소포화도 : <span class="text-green"> {{ OxygenSaturation }} </span> </h6>
+                    <h6> 심박수: <span class="text-blue"> {{ heartrate }} </span> BPM </h6>
+                    <h6> 호흡수 : <span class="text-green"> {{ respiration }} </span> 회/분</h6>
+                </div>
+            </div>   
+        </page-body>
+    </page>
+            
 </template>
 
 <script>
 
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onActivated, onDeactivated } from 'vue';
 import * as facemesh from '@tensorflow-models/facemesh';
 // import  '@tensorflow/tfjs-core';
 import { useQuasar } from 'quasar';
@@ -60,9 +72,20 @@ export default {
         const average = (array) => array.reduce((a, b) => a + b) / array.length;
         const argMax = (array) => array.map((x, i) => [x, i]).reduce((r, a) => (a[0] > r[0] ? a : r))[1];
 
-        onMounted(() => {
+        onActivated(() => {
             init();
         })
+
+        onDeactivated(() =>{
+            disableCamera();
+        })
+
+        // 카메라 끄기 버튼
+        function disableCamera() {
+            video.value.srcObject.getVideoTracks().forEach(track => {
+                track.stop();
+            });
+        }
 
         const init = ( async () => {
             fmesh = await facemesh.load({maxFaces:1});

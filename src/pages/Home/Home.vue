@@ -19,8 +19,18 @@
         />
 
         <q-btn
-          to="/oxgen"
+          to="/home/oxgen"
           label="활력 징후 체크 바로가기"
+          color="primary"
+          class="full-width q-mb-md"
+          rounded
+          unelevated
+          no-caps
+        />
+
+        <q-btn
+          to="/home/Wharehouse"
+          label="3D 창고 바로가기"
           color="primary"
           class="full-width q-mb-md"
           rounded
