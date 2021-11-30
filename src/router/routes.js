@@ -21,6 +21,10 @@ const routes = [
             name: 'Wharehouse' , 
             component: () => import('pages/Wharehouse/Wharehouse.vue') 
           },
+          { path: '/home/LocationAr', 
+            name: 'LocationAr' , 
+            component: () => import('pages/Ar/LocationAr.vue') 
+          },
         ]
       },
       {

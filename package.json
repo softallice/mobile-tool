@@ -10,6 +10,7 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@ar-js-org/ar.js": "^3.3.3-es6-beta-02",
     "@quasar/extras": "^1.0.0",
     "@tensorflow-models/facemesh": "0.0.5",
     "@tensorflow/tfjs": "3.11.0",

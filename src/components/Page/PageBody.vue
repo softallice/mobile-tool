@@ -3,7 +3,7 @@
 
     <div class="page-body-spacer-header"></div>
     
-    <slot />
+    <slot id="q-app-body"/>
 
     <div class="page-body-spacer-footer"></div>
 
