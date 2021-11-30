@@ -1,5 +1,5 @@
 <template>
-  <div id="ARScene"></div>
+  <div id="ARScene" style="z-index: 4000"></div>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ import { ArToolkitProfile, ArToolkitSource, ArToolkitContext, ArMarkerControls} 
 export default {
   name: "ARScene",
   mounted() {
-    ArToolkitContext.baseURL = './'
+    ArToolkitContext.baseURL = '/'
     console.log("ARScene mounted");
     // init renderer
     var renderer	= new THREE.WebGLRenderer({
@@ -103,6 +103,8 @@ export default {
       smoothTolerance: 0.01,
       smoothThreshold: 2
     })
+
+    // console.log(ArToolkitContext.baseURL)
     //////////////////////////////////////////////////////////////////////////////////
     //		add an object in the scene
     //////////////////////////////////////////////////////////////////////////////////
