@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { onMounted ,ref } from 'vue';
+import { onMounted , onBeforeUnmount ,ref } from 'vue';
 
 export default {
     props: {
@@ -27,6 +27,10 @@ export default {
             });
         })
 
+        onBeforeUnmount(() => {
+            removeJitsiWidget();
+        })
+
         function loadScript (src, cb) {
             console.log('loadScript : ', src)
             const scriptEl = document.createElement('script');
@@ -41,7 +45,9 @@ export default {
                 ...props.options,
                 parentNode: jitsiContainer.value,
             };
+
             jitsiApi.value = new window.JitsiMeetExternalAPI(props.domain, options);
+            
         }
 
         function executeCommand (command, ...value) {

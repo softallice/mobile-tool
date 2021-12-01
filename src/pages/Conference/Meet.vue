@@ -11,10 +11,10 @@
         <page-body>
             <div>
                 <vue-jitsi-meet
-                class="wrap"
-                ref="jitsiRef"
-                domain="https://meet.jit.si/"
-                :options="jitsiOptions"
+                    class="wrap"
+                    ref="jitsiRef"
+                    domain="meet.jit.si/"
+                    :options="jitsiOptions"
                 ></vue-jitsi-meet>
             </div>
         </page-body>
@@ -52,21 +52,26 @@ export default {
             noSSL: false,
             userInfo: {
             email: "user@email.com",
-            displayName: "User",
+            displayName: "",
             },
             configOverwrite: {
-            enableNoisyMicDetection: false,
+                enableNoisyMicDetection: false,
+                disableKick: true,
             },
             interfaceConfigOverwrite: {
-            SHOW_JITSI_WATERMARK: false,
-            SHOW_WATERMARK_FOR_GUESTS: false,
-            SHOW_CHROME_EXTENSION_BANNER: false,
+                filmStripOnly: true,
+                SHOW_JITSI_WATERMARK: false,
+                SHOW_WATERMARK_FOR_GUESTS: false,
+                SHOW_CHROME_EXTENSION_BANNER: false,
+                TILE_VIEW_MAX_COLUMNS: 2
             },
             onload: onIFrameLoad(),
         })
 
         function onIFrameLoad() {
             console.log('onIFrameLoad');
+            // jitsiRef.value.executeCommand("toggleFilmStrip");
+            console.log(jitsiRef.value)
         }
 
         
