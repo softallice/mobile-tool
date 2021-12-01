@@ -48,6 +48,27 @@
           no-caps
         />
 
+        <q-btn
+          to="/home/MarkerAr"
+          label="마커 Ar 바로가기"
+          color="primary"
+          class="full-width q-mb-md"
+          rounded
+          unelevated
+          no-caps
+        />
+
+
+        <q-btn
+          to="/home/FoodMaps"
+          label="채식지도"
+          color="primary"
+          class="full-width q-mb-md"
+          rounded
+          unelevated
+          no-caps
+        />
+
         <!-- <p v-for="i in 20" :key="i">Lorems ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate aperiam suscipit blanditiis iusto earum, velit adipisci sequi ex ipsum, aut non. Doloremque iusto eius at quibusdam blanditiis ex vero eaque?</p> -->
       </div>
     </page-body>

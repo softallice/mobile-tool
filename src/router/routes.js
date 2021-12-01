@@ -25,6 +25,14 @@ const routes = [
             name: 'LocationAr' , 
             component: () => import('pages/Ar/LocationAr.vue') 
           },
+          { path: '/home/MarkerAr', 
+            name: 'MarkerAr' , 
+            component: () => import('pages/Ar/MarkerAr.vue') 
+          },
+          { path: '/home/FoodMaps', 
+            name: 'FoodMaps' , 
+            component: () => import('pages/Maps/FoodMaps.vue') 
+          },
         ]
       },
       {

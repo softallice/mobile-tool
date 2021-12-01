@@ -98,6 +98,7 @@ export default {
     scene.add(markerGroup)
     var markerControls = new ArMarkerControls(arToolkitContext, markerGroup, {
       type: 'pattern',
+    //   patternUrl: ArToolkitContext.baseURL + 'data/marker.patt',
       patternUrl: ArToolkitContext.baseURL + 'data/patt.hiro',
       smooth: true,
       smoothCount: 5,
