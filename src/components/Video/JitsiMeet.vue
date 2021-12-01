@@ -32,7 +32,7 @@ export default {
         })
 
         function loadScript (src, cb) {
-            console.log('loadScript : ', src)
+            // console.log('loadScript : ', src)
             const scriptEl = document.createElement('script');
             scriptEl.src = src;
             scriptEl.async = 1;
@@ -65,7 +65,6 @@ export default {
 
         return {
             jitsiContainer,
-            loadScript,
             embedJitsiWidget,
             executeCommand,
             addEventListener,

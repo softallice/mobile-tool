@@ -11,7 +11,6 @@
         <page-body>
             <div>
                 <vue-jitsi-meet
-                    class="wrap"
                     ref="jitsiRef"
                     domain="meet.jit.si/"
                     :options="jitsiOptions"
@@ -40,7 +39,7 @@ export default {
             return _size;
         })
         const screenHeightSize = (() => {
-            let _size = $q.screen.height;
+            let _size = $q.screen.height - 135;
 
             return _size;
         })
@@ -51,8 +50,8 @@ export default {
             height: screenHeightSize(),
             noSSL: false,
             userInfo: {
-            email: "user@email.com",
-            displayName: "",
+                email: "user@email.com",
+                displayName: "",
             },
             configOverwrite: {
                 enableNoisyMicDetection: false,
@@ -69,9 +68,9 @@ export default {
         })
 
         function onIFrameLoad() {
-            console.log('onIFrameLoad');
+            // console.log('onIFrameLoad');
             // jitsiRef.value.executeCommand("toggleFilmStrip");
-            console.log(jitsiRef.value)
+            console.log('onIFrameLoad >>>>>>>>>>>>>>>>>>>>>>>>>>>> ' , jitsiRef.value)
         }
 
         
@@ -84,9 +83,5 @@ export default {
     },
 }
 </script>
-<style scoped>
-.wrap {
-  margin-bottom: -10;
-}
-</style>
+
 
