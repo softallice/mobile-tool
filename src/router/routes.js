@@ -33,6 +33,10 @@ const routes = [
             name: 'FoodMaps' , 
             component: () => import('pages/Maps/FoodMaps.vue') 
           },
+          { path: '/home/Meet', 
+            name: 'FoodMaps' , 
+            component: () => import('pages/Conference/Meet.vue') 
+          },
         ]
       },
       {
