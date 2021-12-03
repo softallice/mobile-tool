@@ -45,7 +45,6 @@ export default {
                 ...props.options,
                 parentNode: jitsiContainer.value,
             };
-
             jitsiApi.value = new window.JitsiMeetExternalAPI(props.domain, options);
             
         }

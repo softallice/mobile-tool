@@ -20,7 +20,7 @@
     </page>
 </template>
 <script>
-import { ref } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import JitsiMeet from 'src/components/Video/JitsiMeet';
 import { useQuasar } from 'quasar';
 
@@ -33,47 +33,40 @@ export default {
         const $q = useQuasar();
         let jitsiRef = ref(null);
 
-        const screenWidthSize = (() => {
-            let _size = $q.screen.width;
+        let screenWidthSize = $q.screen.width;
+        let screenHeightSize = $q.screen.height - 135;
 
-            return _size;
-        })
-        const screenHeightSize = (() => {
-            let _size = $q.screen.height - 135;
 
-            return _size;
-        })
-
-        let jitsiOptions = ref({
-            roomName: "nds-meeting-20211201",
-            width: screenWidthSize(),
-            height: screenHeightSize(),
-            noSSL: false,
-            userInfo: {
-                email: "user@email.com",
-                displayName: "",
-            },
-            configOverwrite: {
-                enableNoisyMicDetection: false,
-                disableKick: true,
-            },
-            interfaceConfigOverwrite: {
-                filmStripOnly: true,
-                SHOW_JITSI_WATERMARK: false,
-                SHOW_WATERMARK_FOR_GUESTS: false,
-                SHOW_CHROME_EXTENSION_BANNER: false,
-                TILE_VIEW_MAX_COLUMNS: 2
-            },
-            onload: onIFrameLoad(),
+        const jitsiOptions = computed (() => {
+                return {
+                    roomName: "nds-meeting-20211201",
+                    width: screenWidthSize,
+                    height: screenHeightSize,
+                    noSSL: false,
+                    userInfo: {
+                        email: "user@email.com",
+                        displayName: "",
+                    },
+                    configOverwrite: {
+                        enableNoisyMicDetection: false,
+                        disableKick: true,
+                    },
+                    interfaceConfigOverwrite: {
+                        filmStripOnly: true,
+                        SHOW_JITSI_WATERMARK: false,
+                        SHOW_WATERMARK_FOR_GUESTS: false,
+                        SHOW_CHROME_EXTENSION_BANNER: false,
+                        TILE_VIEW_MAX_COLUMNS: 2
+                    },
+                    onload: onIFrameLoad,
+                }
         })
 
         function onIFrameLoad() {
-            // console.log('onIFrameLoad');
-            // jitsiRef.value.executeCommand("toggleFilmStrip");
-            console.log('onIFrameLoad >>>>>>>>>>>>>>>>>>>>>>>>>>>> ' , jitsiRef.value)
-        }
-
-        
+            
+            jitsiRef.value.executeCommand("toggleFilmStrip");
+            
+        }       
 
         return {
             jitsiRef,
