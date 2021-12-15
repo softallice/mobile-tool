@@ -20,6 +20,13 @@ const state = reactive({
       // to: '/images',
       icon: 'las la-image',
       label: '이미지'
+    },
+    {
+      root: '/settings',
+      to: '/',
+      // to: '/images',
+      icon: 'las la-image',
+      label: '이미지'
     }
   ],
   images: [

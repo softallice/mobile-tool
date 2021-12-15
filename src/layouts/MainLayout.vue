@@ -21,6 +21,7 @@
 
       </q-tabs>
     </q-footer> -->
+    <!-- add bottom menu -->
     <BottomMenu
       :options="options"
       :badge-color="badgeColor"
@@ -53,12 +54,18 @@ export default {
         id: 1,
         icon: "fas fa-home",
         title: "Home",
-        childs: [
-          { id: 101, icon: "fas fa-tshirt", title: "Products" },
-          { id: 102, icon: "fas fa-tag", title: "Discount" },
-          { id: 103, icon: "fas fa-gifts", title: "Gifts", badge: 7 },
-        ],
+        path:"/"
       },
+      // {
+      //   id: 1,
+      //   icon: "fas fa-home",
+      //   title: "Home",
+      //   childs: [
+      //     { id: 101, icon: "fas fa-tshirt", title: "Products" },
+      //     { id: 102, icon: "fas fa-tag", title: "Discount" },
+      //     { id: 103, icon: "fas fa-gifts", title: "Gifts", badge: 7 },
+      //   ],
+      // },
       { id: 2, icon: "fas fa-wallet", title: "Wallet" , path:"/home/imagemap"},
       {
         id: 3,
@@ -73,7 +80,7 @@ export default {
         ],
       },
       { id: 4, icon: "fas fa-bell", title: "Notifcation", badge: 15 },
-      { id: 5, icon: "fas fa-user", title: "Account" },
+      { id: 5, icon: "fas fa-user-cog", title: "Setting", path:"/settings" },
     ]);
 
     const foregroundColor = ref("#42A5F5");

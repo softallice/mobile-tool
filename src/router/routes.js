@@ -37,6 +37,10 @@ const routes = [
             name: 'Meet' , 
             component: () => import('pages/Conference/Meet.vue') 
           },
+          { path: '/home/Lottie', 
+            name: 'Lottie' , 
+            component: () => import('pages/Lottie/Lotties.vue') 
+          },
         ]
       },
       {
@@ -58,6 +62,10 @@ const routes = [
             component: () => import('pages/Images/Image.vue'),
           }
         ]
+      },
+      {
+        path: '/settings',
+        component: () => import('pages/Setting/Setting.vue'),
       },
       
     ]
